@@ -1,3 +1,6 @@
+import clsx from "clsx";
+
+import { useAppData } from "../../data/hook/useAppData";
 import { Cabecalho } from "./Cabecalho";
 import { Conteudo } from "./Conteudo";
 import { MenuLateral } from "./MenuLateral";
@@ -9,8 +12,9 @@ interface LayoutProps {
 }
 
 export function Layout(props: LayoutProps) {
+  const {tema, alternarTema} = useAppData()
   return (
-    <div className="dark flex h-screen w-screen">
+    <div className={clsx("flex h-screen w-screen", tema)}>
       <MenuLateral />
       <div className="flex flex-col w-full p-7 bg-gray-300 dark:bg-gray-800">
         <Cabecalho subtitulo={props.subtitulo} titulo={props.titulo}/>
