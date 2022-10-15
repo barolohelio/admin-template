@@ -9,7 +9,9 @@ export function Logo(props: LogoProps) {
     <div
       className="
       flex flex-col justify-center items-center
-    bg-white h-16 w-16 rounded-full"
+      h-16 w-16 rounded-full
+      "
+    
     >
       {props.icone}
     </div>
