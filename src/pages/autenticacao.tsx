@@ -1,6 +1,7 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { AuthInput } from "../auth/Authinput";
+import { AlertaIcone } from "../components/icons";
 
 export default function Autenticacao() {
   const [modo, setModo] = useState<"login" | "cadastro">("login");
@@ -34,6 +35,14 @@ export default function Autenticacao() {
             ? "Entre com a Sua Conta"
             : "Cadastre-se na Plataforma"}
         </h1>
+
+        <div className="
+          bg-red-400 text-white"
+        >
+          {AlertaIcone}
+          <span>Ocorreu um erro fatal</span>
+        </div>
+
         <AuthInput
           label="Email"
           valor={email}
