@@ -4,6 +4,7 @@ interface AuthInputProps {
   obrigatorio?: boolean;
   tipo: "text" | "email" | "password";
   valorMudou: (novoValor: any) => void;
+  className?: string
 }
 
 export function AuthInput(props: AuthInputProps) {
@@ -15,8 +16,7 @@ export function AuthInput(props: AuthInputProps) {
         value={props.valor}
         onChange={(e) => props.valorMudou?.(e.target.value)}
         required={props.obrigatorio}
-        className="px-4 py-3 rounded-lg bg-gray-200 mt-2 
-        border focus:border-blue-500 focus:bg-white focus:outline-none"
+        className="px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { AuthInput } from "../auth/Authinput";
 
@@ -18,16 +18,17 @@ export default function Autenticacao() {
 
   return (
     <div className="flex  h-screen items-center justify-center">
-      <div>
+      <div className="w-1/2 hidden md:block md:1/2 lg:w-2/3">
         <img
           src="https://source.unsplash.com/random"
           alt="Imagem da Tela de Autenticação"
+          className="h-screen w-full object-cover"
         />
       </div>
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2 m-10 lg:1/3">
         <h1
           className="
-          text-xl font-bold mb-5
+          text-3xl font-bold mb-5
         "
         >
           {modo === "login"
@@ -40,6 +41,7 @@ export default function Autenticacao() {
           valorMudou={setEmail}
           tipo="email"
           obrigatorio
+          className=""
         />
         <AuthInput
           label="Senha"
@@ -67,6 +69,28 @@ export default function Autenticacao() {
         >
           Entrar com Google
         </button>
+
+        {modo === "login" ? (
+          <p className="mt-8">
+            Novo por aqui?
+            <a
+              onClick={() => setModo("cadastro")}
+              className="
+                text-blue-500 hover:text-blue-700 
+                cursor-pointer font-semibold"
+            > Crie uma conta gratuita?</a>
+          </p>
+        ) : (
+          <p className="mt-8">
+            já faz parte da nossa comunidade?
+            <a
+              onClick={() => setModo("login")}
+              className="
+              text-blue-500 hover:text-blue-700 
+              cursor-pointer font-semibold"
+            > Entre com a suas Credenciais</a>
+          </p>
+        )}
       </div>
     </div>
   );
