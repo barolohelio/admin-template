@@ -1,7 +1,6 @@
 import clsx from "clsx";
-//import { ForcarAutenticacao } from "../../auth/ForcarAutenticacao";
+import { ForcarAutenticacao } from "../../auth/ForcarAutenticacao";
 import { useAppData } from "../../data/hook/useAppData";
-import { forcarAutenticacao } from "../../functions/ForcarAutenticacao";
 import { Cabecalho } from "./Cabecalho";
 import { Conteudo } from "./Conteudo";
 import { MenuLateral } from "./MenuLateral";
@@ -15,9 +14,9 @@ interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const { tema } = useAppData();
 
-  return forcarAutenticacao(
+  return (
     //Caso precise usar componente
-    //<ForcarAutenticacao> 
+    <ForcarAutenticacao> 
       <div className={clsx("flex h-screen w-screen", tema)}>
         <MenuLateral />
         <div className="flex flex-col w-full p-7 bg-gray-300 dark:bg-gray-800">
@@ -25,6 +24,17 @@ export function Layout(props: LayoutProps) {
           <Conteudo>{props.children}</Conteudo>
         </div>
       </div>
-   // </ForcarAutenticacao>
+   </ForcarAutenticacao>
+
+  // return forcarAutenticacao(
+  //   //Caso precise usar function
+  //     <div className={clsx("flex h-screen w-screen", tema)}>
+  //       <MenuLateral />
+  //       <div className="flex flex-col w-full p-7 bg-gray-300 dark:bg-gray-800">
+  //         <Cabecalho subtitulo={props.subtitulo} titulo={props.titulo} />
+  //         <Conteudo>{props.children}</Conteudo>
+  //       </div>
+  //     </div>
+  // 
   );
 }
