@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "autenticacao",
     "Autenticacao",
     "Authinput",
     "Botao",
@@ -10,6 +11,8 @@
     "notificacoes",
     "Notificacoes",
     "obrigatorio",
+    "Protecao",
+    "Sessao",
     "tailwindcss",
     "usuario",
     "Usuario"
