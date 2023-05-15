@@ -34,7 +34,7 @@ export default function Autenticacao() {
     <div className="flex  h-screen items-center justify-center">
       <div className="w-1/2 hidden md:block md:1/2 lg:w-2/3">
         <img
-          src="https://source.unsplash.com/random"
+          src="https://20230424-images-barolo-dev.s3.amazonaws.com/image-login-template.jpg"
           alt="Imagem da Tela de Autenticação"
           className="h-screen w-full object-cover"
         />
